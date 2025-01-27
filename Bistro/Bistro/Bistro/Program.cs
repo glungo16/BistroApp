@@ -1,5 +1,5 @@
-using Bistro.Client.Pages;
-using Bistro.Components;
+using Bistro.WASMView.Pages;
+using Bistro.Service.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +30,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Bistro.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Bistro.WASMView._Imports).Assembly);
 
 app.Run();
