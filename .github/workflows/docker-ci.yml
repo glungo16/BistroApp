@@ -24,9 +24,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./Bistro/Bistro.sln
     - name: Build
-      run: dotnet build
+      run: dotnet build ./Bistro/Bistro.sln
     - name: Test with the dotnet CLI
-      run: dotnet test
+      run: dotnet test ./Bistro/Bistro.sln
       
     #- uses: actions/checkout@v4
 
