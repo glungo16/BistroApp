@@ -17,15 +17,28 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Run tests
-      run: dotnet test /home/runner/Bistro/Bistro.UnitTest/Bistro.UnitTest.csproj --logger trx
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build
+    - name: Test with the dotnet CLI
+      run: dotnet test
       
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    #- uses: actions/checkout@v4
+
+    #- name: Run tests
+      #run: dotnet test /home/runner/Bistro/Bistro.UnitTest/Bistro.UnitTest.csproj --logger trx
 
     - if: success()
-      name: Upload a Build Artifact
+      name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    
+    - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.6.0
       with:
         # Artifact name
