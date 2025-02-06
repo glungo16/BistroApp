@@ -44,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v4.6.0
       with:
         # Artifact name
-         name: artifact:$(date +%s) # optional, default is artifact
+         name: workspace_artifacts # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-         path: ./artifacts/
+         path: ${{ github.workspace }}
 
