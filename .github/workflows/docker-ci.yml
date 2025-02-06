@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Run tests
-      run: dotnet test ~/Bistro/Bistro.UnitTest/Bistro.UnitTest.csproj
+      run: dotnet test /home/runner/Bistro/Bistro.UnitTest/Bistro.UnitTest.csproj --logger trx
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
