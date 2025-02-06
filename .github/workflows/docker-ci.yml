@@ -35,7 +35,7 @@ jobs:
 
     - if: success()
       name: Build the Docker image
-      run: docker build ./Bistro --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build -f ./Bistro/Dockerfile . --file Dockerfile --tag my-image-name:$(date +%s)
 
     
     - name: Upload a Build Artifact
