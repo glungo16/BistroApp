@@ -22,7 +22,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: Install dependencies
-      run: dotnet restore /home/runner/Bistro/
+      run: dotnet restore ~/Bistro/Bistro.sln
     - name: Build
       run: dotnet build
     - name: Test with the dotnet CLI
