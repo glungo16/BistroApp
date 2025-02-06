@@ -14,7 +14,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./Bistro
     steps:
     - uses: actions/checkout@v4
     - name: Setup dotnet
@@ -22,11 +24,11 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: Install dependencies
-      run: dotnet restore ./Bistro/Bistro.sln
+      run: dotnet restore
     - name: Build
-      run: dotnet build ./Bistro/Bistro.sln
+      run: dotnet build
     - name: Test with the dotnet CLI
-      run: dotnet test ./Bistro/Bistro.sln
+      run: dotnet test
       
     #- uses: actions/checkout@v4
 
@@ -35,7 +37,7 @@ jobs:
 
     - if: success()
       name: Build the Docker image
-      run: docker build -f ./Bistro/Dockerfile . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
     
     - name: Upload a Build Artifact
