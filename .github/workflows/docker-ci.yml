@@ -36,15 +36,19 @@ jobs:
       #run: dotnet test /home/runner/Bistro/Bistro.UnitTest/Bistro.UnitTest.csproj --logger trx
 
     - if: success()
-      name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      name: Build the Docker Image
+      run: docker build -t bistro_image:latest .
+      #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
     
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4.6.0
+      uses: ishworkh/container-image-artifact-upload@v2.0.0
       with:
-        # Artifact name
-         name: workspace_artifacts # optional, default is artifact
-        # A file, directory or wildcard pattern that describes what to upload
-         path: ${{ github.workspace }}
+        image: "bistro_image:latest"
+      # uses: actions/upload-artifact@v4.6.0
+      # with:
+      #   # Artifact name
+      #    name: workspace_artifacts # optional, default is artifact
+      #   # A file, directory or wildcard pattern that describes what to upload
+      #    path: ${{ github.workspace }}
 
