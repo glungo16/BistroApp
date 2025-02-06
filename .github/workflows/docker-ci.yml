@@ -1,0 +1,33 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run tests
+      run: dotnet test
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - if: success()
+      name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.6.0
+      with:
+        # Artifact name
+         name: artifact:$(date +%s) # optional, default is artifact
+        # A file, directory or wildcard pattern that describes what to upload
+         path: ./artifacts/
+
