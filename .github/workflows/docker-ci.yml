@@ -21,6 +21,7 @@ jobs:
     defaults:
       run:
         working-directory: ./Bistro
+        
     steps:
     - uses: actions/checkout@v4
     - name: Setup dotnet
@@ -44,8 +45,6 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-
-      
 
     steps:
       - name: Checkout repository

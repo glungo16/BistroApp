@@ -17,7 +17,7 @@ namespace Bistro.UnitTest.WASMViewTests
 
             // Assert
             var counterDisplay = rc.Find(Constants.Paragraph).TextContent;
-            counterDisplay.MarkupMatches("Current count: 1");
+            counterDisplay.MarkupMatches("Current count: 3");
         }
     }
 }
