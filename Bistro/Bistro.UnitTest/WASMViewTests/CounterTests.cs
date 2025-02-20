@@ -1,3 +1,4 @@
+using Bistro.Common;
 using Bistro.WASMView.Pages;
 using Bunit;
 

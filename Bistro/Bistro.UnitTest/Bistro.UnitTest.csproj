@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bistro.Common\Bistro.Common.csproj" />
     <ProjectReference Include="..\Bistro\Bistro.Client\Bistro.WASMView.csproj" />
   </ItemGroup>
 

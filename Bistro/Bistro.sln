@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bistro.Clients", "Bistro.Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bistro.UnitTest", "Bistro.UnitTest\Bistro.UnitTest.csproj", "{48CAFC80-E5BA-459F-8C4D-89E4A2706461}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bistro.ComponentTest", "Bistro.ComponentTest\Bistro.ComponentTest.csproj", "{174322EC-5970-4BB7-A183-CE6BC3775A13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{48CAFC80-E5BA-459F-8C4D-89E4A2706461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48CAFC80-E5BA-459F-8C4D-89E4A2706461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48CAFC80-E5BA-459F-8C4D-89E4A2706461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174322EC-5970-4BB7-A183-CE6BC3775A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174322EC-5970-4BB7-A183-CE6BC3775A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174322EC-5970-4BB7-A183-CE6BC3775A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174322EC-5970-4BB7-A183-CE6BC3775A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
