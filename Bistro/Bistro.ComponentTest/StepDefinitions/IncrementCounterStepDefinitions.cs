@@ -23,7 +23,10 @@ namespace Bistro.ComponentTest.StepDefinitions
         [When("the counter button is clicked {int} times")]
         public void WhenTheCounterButtonIsClickedTimes(int numberOfClicks)
         {
-            for(int i = 0; i < numberOfClicks; i++) rc.Find(Constants.Button).Click();
+            for (int i = 0; i < numberOfClicks; i++)
+            {
+                rc.Find(Constants.Button).Click();
+            }
         }
 
         [Then("the current counter should be {int}")]
@@ -31,6 +34,11 @@ namespace Bistro.ComponentTest.StepDefinitions
         {
             var counterDisplay = rc.Find(Constants.Paragraph).TextContent;
             counterDisplay.MarkupMatches($"Current count: {expectedValue}");
+        }
+
+        [AfterScenario]
+        public void DisposeComponents()
+        {
             ctx.DisposeComponents();
         }
     }
