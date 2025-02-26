@@ -6,6 +6,7 @@
     <UserSecretsId>784b3d50-7b75-423e-a3a8-f4b6d7e98c60</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
+	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <ItemGroup>

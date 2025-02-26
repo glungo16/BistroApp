@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bistro.Common
 {
-    public static class Constants
-    {
-        public static readonly string Button = "button";
-        public static readonly string Paragraph = "p";
-    }
+	public static class Constants
+	{
+		public static readonly string Button = "button";
+		public static readonly string Paragraph = "p";
+	}
 }
